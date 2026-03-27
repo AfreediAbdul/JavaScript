@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Code to say Thank You
+        </title>
+        <style>
+            .click-here {
+                padding: 15px;
+                border-radius: 50%;
+                border: none;
+                font-weight: bold;
+                color: white;
+                background-color: red;
+                cursor: pointer;
+                }
+             .click-here:disabled {
+                    background-color: gray;
+                    color: #ddd;
+                    cursor: not-allowed;
+                    opacity: 0.7;
+                }           
+        </style>
+    </head>
+    <body>
+        <p style="font-weight: bold; font-size: larger;">
+            This is the document practice 1
+        </p>
+        <button class="click-here js-click-here" onclick="sayThankYou()">
+            Click Here
+        </button>
+        <p class="js-thanks"></p>
+        <script>
+            function sayThankYou(){
+                document.querySelector(".js-thanks").innerText="Thank You!";
+                const btn=document.querySelector(".js-click-here");
+                btn.disabled=true;
+                btn.innerText="Clicked";
+            }
+        </script>
+    </body>
+</html>
