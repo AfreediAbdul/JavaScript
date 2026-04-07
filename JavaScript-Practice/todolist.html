@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>To Do List</title>
+        <style>
+            .body-title{
+                font-family: Arial;
+                color: black;
+                font-weight: bold;
+                margin-bottom: 10px;
+                
+            }
+        </style>
+    </head>
+    <body>
+        <p .body-title>To Do List</p>
+        <input type="text" placeholder="Enter the task" class="taskInput">
+        <button onclick="addTask()" class="addBtn">Add Task</button>
+        <div class="taskContainer"> </div>
+    <script>
+        
+        
+        function capitalizeWords(str) {
+        return str
+        .toLowerCase()
+        .split(" ")
+        .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+        .join(" ");
+        }
+        function addTask(){
+            const input = document.querySelector(".taskInput");
+            const container = document.querySelector(".taskContainer");
+            let task = input.value.trim();
+
+            if (task === "") return;
+            task = capitalizeWords(task);
+
+            // Create paragraph
+            const p = document.createElement("p");
+
+            // Interpolation
+            p.innerHTML = `${task}`;
+            container.appendChild(p);
+            input.value = "";
+        }
+    </script>
+    </body>
+</html>
